@@ -1,0 +1,22 @@
+{
+    "formatted_sms": {
+        "sms1": {
+            "message": "Payment received",
+            "amount": 100,
+            "timestamp": 1658323200000,
+            "formattedTimestamp": "2022-07-21 00:00:00"
+        },
+        "sms2": {
+            "message": "Payment sent",
+            "amount": 50,
+            "timestamp": 1658409600000,
+            "formattedTimestamp": "2022-07-22 00:00:00"
+        },
+        "sms3": {
+            "message": "Payment received",
+            "amount": 200,
+            "timestamp": 1658496000000,
+            "formattedTimestamp": "2022-07-23 00:00:00"
+        }
+    }
+}
