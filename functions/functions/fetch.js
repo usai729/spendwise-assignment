@@ -89,6 +89,34 @@ exports.countSMS = async (req, res) => {
 };
 
 /**
+ * Calculates the sum of all the amounts in sms
+ * @param {Request} req - The HTTP request object.
+ * @param {Response} res - The HTTP response object.
+ */
+exports.sumAmount = async(req, res) => {
+  try {
+    const snapshot = await db.ref("sms").once("value");
+    const smsData = snapshot.val();
+
+    var tot = 0;
+
+    if (!smsData) {
+      res.status(404).send("No data found in 'sms' collection");
+      return;
+    }
+
+    Object.keys(smsData).forEach(sms => {
+      tot += smsData[sms].amount;
+    });
+
+    res.json({ total: tot });
+  } catch (e) {
+    console.error("Error summing amounts:", e);
+    res.status(500).send("Error summing amounts: " + e.message);
+  }
+}
+
+/**
  * Fetches all 'sms' and 'formatted_sms' entries.
  * @param {Request} req - The HTTP request object.
  * @param {Response} res - The HTTP response object.

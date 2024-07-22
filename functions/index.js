@@ -23,3 +23,4 @@ exports.addData = functions.https.onRequest(insertFunctions.addData);
 exports.formatData = functions.https.onRequest(fetchFunctions.formatData);
 exports.countsms = functions.https.onRequest(fetchFunctions.countSMS);
 exports.fetchAll = functions.https.onRequest(fetchFunctions.fetchAll);
+exports.sumAmounts = functions.https.onRequest(fetchFunctions.sumAmount);
